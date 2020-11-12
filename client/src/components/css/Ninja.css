@@ -1,0 +1,29 @@
+.ninja-item {
+    list-style-type: none;
+    padding: 1rem;
+    margin: .8rem;
+    border-radius: .5rem;
+}
+
+.available {
+    background-color: #4CAF50;
+}
+
+.not-available {
+    background-color: #9E9E9E;
+}
+
+.ninja-name {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.ninja-rank {
+    display: block;
+}
+
+.ninja-available {
+    display: block;
+    font-size: 1.3rem;
+}
