@@ -11,7 +11,7 @@
   height: 50%;
   padding: 1rem;
   margin: 0 auto 1rem auto;
-  box-shadow: 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 12px 12px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -19,6 +19,7 @@
   border-radius: 1rem;
   width: 760px;
   padding: 1rem;
+  height: 100%;
   margin: 0 auto 1rem auto;
-  box-shadow: 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 12px 12px 6px 0px rgba(0, 0, 0, 0.3);
 }

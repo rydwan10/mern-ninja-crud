@@ -4,6 +4,7 @@ import './css/AddNinja.css';
 const AddNinja = ({ getActualData }) => {
     const [name, setName] = useState('');
     const [rank, setRank] = useState('');
+    const [description, setDescription] = useState('');
     const [available, setAvailable] = useState(false);
 
     const [message, setMessage] = useState([]);
@@ -19,11 +20,21 @@ const AddNinja = ({ getActualData }) => {
     const handleAvailableChange = (e) => {
         setAvailable(e.target.value);
     }
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    }
 
     const removeMessage = () => {
         setTimeout(() => {
             setMessage([]);
         }, 2000)
+    }
+
+    const cleanForm = () => {
+        setName('');
+        setRank('');
+        setDescription('');
+        setAvailable(false);
     }
 
     const addNinja = async (data) => {
@@ -51,27 +62,31 @@ const AddNinja = ({ getActualData }) => {
             .then(data => {
                 setMessage(data)
                 getActualData();
+                cleanForm();
             })
     }
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, rank, available };
+        const data = { name, rank, available, description };
         addNinja(data)
         removeMessage();
+
     }
 
 
     return (
         <>
-            {/* <div className={message.messageType === "error" ? 'message-container error' : 'message-container success'}>
-                <span className="message">{message ? message.message : ''}</span>
+            {/* <div className={message.messageType === "error" ? 'message-container error' : 'message-container success'}> */}
+            {/* <div className={message.messageType === 'error' ? 'message error' : 'message success'}>
+                {message ? <h3>{message.message}</h3> : ''}
             </div> */}
-
-            {
-                message === [] ? console.log('tidak ada pesan') : console.log('ada pesan')
-            }
-
+            {/* </div> */}
+            <div>
+                {message ? <h3 className={message.messageType === "error" ? 'error' : 'success'}>{message.message}</h3> : ''}
+            </div>
             <h4 className="title">Add Ninja</h4>
             <form className="__form" onSubmit={handleSubmit}>
                 <div className="input-group">
@@ -92,12 +107,16 @@ const AddNinja = ({ getActualData }) => {
                 <div className="input-group">
                     <label htmlFor="available">Available</label>
                     <select name="available" id="available" onChange={handleAvailableChange} defaultValue={available}>
-                        <option value={false}>Not Available</option>
                         <option value={true}>Available</option>
+                        <option value={false}>Not Available</option>
                     </select>
                 </div>
+                <div className="input-group">
+                    <label htmlFor="description">Description</label>
+                    <textarea rows="6" name="description" id="description" onChange={handleDescriptionChange} value={description} />
+                </div>
                 <div className="button-wrapper">
-                    <button type="submit">Add Ninja</button>
+                    <button className="add-button" type="submit">Add Ninja</button>
                 </div>
             </form>
         </>

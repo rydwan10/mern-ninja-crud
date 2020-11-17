@@ -6,11 +6,11 @@
 }
 
 .available {
-    background-color: #4CAF50;
+    background-color: #46e24c;
 }
 
 .not-available {
-    background-color: #9E9E9E;
+    background-color: #7b7b7b;
 }
 
 .ninja-name {
@@ -26,4 +26,20 @@
 .ninja-available {
     display: block;
     font-size: 1.3rem;
+}
+
+.delete-ninja-button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    background: rgb(255, 81, 81);
+    display: block;
+    margin: 0 0 0 auto;
+    font-weight: 600;
+}
+
+.delete-ninja-button:hover {
+    cursor: pointer;
+    background: rgb(250, 41, 41);
 }

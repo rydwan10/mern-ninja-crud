@@ -33,7 +33,7 @@ function App() {
         <AddNinja getActualData={() => { getActualData() }} />
       </div>
       <div className="container">
-        <NinjaList ninjas={ninjas} isLoading={isLoading} />
+        <NinjaList ninjas={ninjas} isLoading={isLoading} getActualData={() => { getActualData() }} />
       </div>
     </div>
   );

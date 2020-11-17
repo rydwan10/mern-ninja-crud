@@ -13,8 +13,8 @@ label {
     margin-bottom: 6px;
 }
 
-input[type="text"] {
-    font-size: 1.4rem;
+input[type="text"], textarea {
+    font-size: 1.2rem;
     padding: 5px;
     border-radius: 4px;
     border: 1px solid rgb(197, 197, 197);
@@ -34,7 +34,7 @@ select {
     margin-top: 3rem;
 }
 
-button {
+button.add-button {
     display: block;
     margin: 0 auto;
     padding: 8px 24px;
@@ -57,10 +57,15 @@ button {
     margin-bottom: .5rem;
 }
 
+.message {
+    font-weight: 600;
+    color: #ffffff;
+}
+
 .error {
-    background-color: rgb(255, 66, 19);
+    color: rgb(255, 66, 19);
 }
 
 .success {
-    background-color: #00ff7f;
+    color: #00ff7f;
 }
